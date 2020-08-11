@@ -1,0 +1,42 @@
+.alert {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    padding:3px 0px;
+
+    &:before {
+        content: " ";
+        display: block;
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 15px;
+        font-size: 1rem;
+        padding: 3px;
+        color:$white;
+        font-weight: bold;
+    }
+
+    &.info{
+        &:before{
+            background-color: $blue;
+            content: 'i';
+        }
+    }
+
+    &.danger{
+        &::before{
+            background-color: $red;
+            content: 'X';
+        }
+    }
+
+    &.warning{
+        &::before{
+            content: '!';
+            background-color: $orange;
+        }
+    }
+}

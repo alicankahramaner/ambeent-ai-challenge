@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Checkbox } from './components/checkbox';
+import { Input } from './components/input';
+import { Card } from './components/card';
+import { Alert } from './components/alert';
+import { TimeInput } from './components/timeinput';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends React.Component {
+
+  render() {
+    return (
+      <React.Fragment>
+        <div className="container">
+          <Card>
+            <Alert
+              message="Yetkili servis çalışma saatlerini buradan ayarlayabilirsiniz."
+            />
+          </Card>
+
+          <Card
+            title="Varsayılan Çalışma Saati"
+            subTitle="Bu ayar tatil olan günlerde, gece nöbetinin ayarlanabilmesi için önemlidir"
+          >
+
+            <TimeInput
+              label="Başlangıç"
+              data={{ min: 0, hour: 0 }}
+            />
+
+          </Card>
+          <Card>
+
+          </Card>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
-
-export default App;

@@ -1,0 +1,55 @@
+.material-checkbox {
+    display: inline-flex;
+    justify-content: center;
+    font-size: 13px;
+    // padding: 5px;
+    height: $inputHeight;
+    align-items: center;
+    padding:0px 5px;
+    &-input {
+        position: relative;
+        margin-right: 10px;
+        width: 35px;
+        display: inline-flex;
+        cursor: pointer;
+
+        input {
+            display: inline-flex;
+            align-items: center;
+            appearance: none;
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                height: 10px;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                background-color: $gray-400;
+                transition: all ease-in-out 0.3s;
+            }
+
+            &:before {
+                border-radius: $radiusSize;
+            }
+
+            &:after {
+                width: 10px;
+                padding: 4px;
+                border-radius: 100%;
+                background-color: $gray-500;
+            }
+
+            &:checked {
+                &::before {
+                    background-color: lighten($blue, 20);
+                }
+
+                &:after {
+                    left: calc(100% - 18px);
+                    background-color: $blue;
+                }
+            }
+        }
+    }
+}
