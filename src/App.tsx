@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from './components/card';
 import { Alert } from './components/alert';
 import { ShiftOfDay } from './components/shiftofday';
-import { ShiftDto, ShiftOfDayDto, DefaultShiftDto } from './models';
+import { ShiftDto, ShiftOfDayDto, DefaultShiftDto, KeyAndValueDto } from './models';
 import { Container } from './components/grid/container';
 import { Row } from './components/grid/row';
 import { Col } from './components/grid/col';
@@ -24,14 +24,35 @@ export class App extends React.Component<any, ShiftDto> {
     shift: []
   }
 
-  private days: string[] = [
-    "Pazartesi",
-    "Salı",
-    "Çarşamba",
-    "Perşembe",
-    "Cuma",
-    "Cumartesi",
-    "Pazar"
+  private daysOfWeek: KeyAndValueDto[] = [
+    {
+      key: 'monday',
+      value: "Pazartesi",
+    },
+    {
+      key: 'tuesday',
+      value: "Salı"
+    },
+    {
+      key: 'wednesday',
+      value: 'Çarşamba'
+    },
+    {
+      key: 'thursday',
+      value: 'Perşembe'
+    },
+    {
+      key: 'friday',
+      value: 'Cuma'
+    },
+    {
+      key: 'saturday',
+      value: 'Cumartesi'
+    },
+    {
+      key: 'sunday',
+      value: 'Pazar'
+    }
   ]
 
   private getData() {
@@ -90,19 +111,17 @@ export class App extends React.Component<any, ShiftDto> {
         <Row>
           {
             this.state.shift.map((shift: ShiftOfDayDto, index: number) => {
-              let day = this.days[index];
               return (
                 <Col key={`col_${index}`} breakpoints={
                   {
-                    md: 3,
-                    lg: 3
+                    md: 4,
+                    xl: 3
                   }
                 }>
                   <ShiftOfDay
                     data={shift}
                     key={`shift_${index}`}
-                    dayName={day}
-                    className={day === 'Cumartesi' ? 'saturday' : day === 'Pazar' ? 'sunday' : undefined}
+                    day={this.daysOfWeek[index]}
                     onSave={(e) => this.saveShiftData(e, index)}
                   />
                 </Col>

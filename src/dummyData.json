@@ -48,10 +48,10 @@
         },
         {
             "isHoliday": true,
-            "startHour": 8,
-            "startMinute": 30,
-            "finishHour": 14,
-            "finishMinute": 30
+            "startHour": null,
+            "startMinute": null,
+            "finishHour": null,
+            "finishMinute": null
         }
     ]
 }

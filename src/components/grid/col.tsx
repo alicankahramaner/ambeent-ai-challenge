@@ -24,9 +24,9 @@ export const Col: React.FC<ColProps> = (props) => {
         } else {
             let { xl, lg, md, sm } = props.breakpoints;
 
-            xl && classList.push(`col-sm-${xl}`);
-            lg && classList.push(`col-sm-${lg}`);
-            md && classList.push(`col-sm-${md}`);
+            xl && classList.push(`col-xl-${xl}`);
+            lg && classList.push(`col-lg-${lg}`);
+            md && classList.push(`col-md-${md}`);
             sm && classList.push(`col-sm-${sm}`);
         }
 

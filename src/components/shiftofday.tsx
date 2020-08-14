@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ShiftOfDayDto } from '../models';
+import { ShiftOfDayDto, KeyAndValueDto } from '../models';
 import { Card } from './card';
 import { CheckDataMatches } from '../helpers/util';
 import { TimeInput } from './timeinput';
@@ -7,7 +7,7 @@ import { Checkbox } from './checkbox';
 import { FormItem } from './formItem';
 
 interface ShiftOfDayProps {
-    dayName: string;
+    day: KeyAndValueDto;
     className?: string;
     data: ShiftOfDayDto;
     onSave(data: ShiftOfDayDto): void;
@@ -25,7 +25,7 @@ export const ShiftOfDay: React.FC<ShiftOfDayProps> = (props) => {
     }
 
     const className = () => {
-        let classList: string[] = ['shiftofday'];
+        let classList: string[] = ['shiftofday', props.day.key];
 
         props.className && classList.push(props.className);
 
@@ -36,7 +36,7 @@ export const ShiftOfDay: React.FC<ShiftOfDayProps> = (props) => {
         <Card
             subTitle="Gün"
             reversSortTitle={true}
-            title={props.dayName}
+            title={props.day.value}
             className={className()}
         >
             <FormItem>

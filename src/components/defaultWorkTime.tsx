@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { TimeInput } from './timeinput';
+import { TimeInput, TimeInputDataDto } from './timeinput';
 import { Card } from './card';
-import { DefaultShiftDto, TimeDto } from '../models';
+import { DefaultShiftDto } from '../models';
 import { CheckDataMatches } from '../helpers/util';
 
 interface DefaultWorkTimeProps {
@@ -16,11 +16,11 @@ export const DefaultWorkTime: React.FC<DefaultWorkTimeProps> = (props) => {
         setState(props.data);
     }, [props.data])
 
-    const onChange = (data: TimeDto) => {
-        console.log(data);
+    const onChange = (data: TimeInputDataDto) => {
+
         setState({
-            startHour: data.hour,
-            startMinute: data.min
+            startHour: Number(data.hour),
+            startMinute: Number(data.min)
         });
     }
 

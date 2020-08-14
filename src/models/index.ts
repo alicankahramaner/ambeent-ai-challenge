@@ -1,23 +1,28 @@
-export interface TimeDto {
-    hour: number;
-    min: number;
+export interface KeyAndValueDto {
+    key: string;
+    value: any;
 }
 
-export interface StartTimeDto {
-    startHour: number;
-    startMinute: number;
+export interface TimeDto {
+    hour: number | null;
+    min: number | null;
+}
+
+export interface StartTimeDto<T> {
+    startHour: T;
+    startMinute: T;
 }
 
 export interface FinishTimeDto {
-    finishHour: number;
-    finishMinute: number;
+    finishHour: number | null;
+    finishMinute: number | null;
 }
 
-export interface ShiftOfDayDto extends StartTimeDto, FinishTimeDto {
+export interface ShiftOfDayDto extends StartTimeDto<number | null>, FinishTimeDto {
     isHoliday: boolean;
 }
 
-export interface DefaultShiftDto extends StartTimeDto { }
+export interface DefaultShiftDto extends StartTimeDto<number> { }
 
 export interface ShiftDto {
     shift: ShiftOfDayDto[];
