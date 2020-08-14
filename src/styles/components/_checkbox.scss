@@ -41,6 +41,12 @@
                 background-color: $gray-500;
             }
 
+            &:focus {
+                &:after {
+                    background-color: lighten($blue, 20);
+                }
+            }
+
             &:checked {
                 &::before {
                     background-color: lighten($blue, 20);

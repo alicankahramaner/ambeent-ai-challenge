@@ -5,6 +5,7 @@ import { CheckDataMatches } from '../helpers/util';
 import { TimeInput } from './timeinput';
 import { Checkbox } from './checkbox';
 import { FormItem } from './formItem';
+import { Button } from './button';
 
 interface ShiftOfDayProps {
     day: KeyAndValueDto;
@@ -31,7 +32,6 @@ export const ShiftOfDay: React.FC<ShiftOfDayProps> = (props) => {
 
         return classList.join(' ');
     }
-
     return (
         <Card
             subTitle="Gün"
@@ -62,11 +62,11 @@ export const ShiftOfDay: React.FC<ShiftOfDayProps> = (props) => {
             </FormItem>
 
             <FormItem vAlign="end">
-                <button
-                    className="pull-right"
+                <Button
+                    text="Kaydet"
                     onClick={() => onSave()}
                     disabled={isChanged()}
-                >Kaydet</button>
+                />
             </FormItem>
         </Card>
     );

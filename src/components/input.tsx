@@ -54,7 +54,7 @@ export class Input extends React.Component<InputProps> {
     }
 
     onChange(event: React.ChangeEvent<HTMLInputElement>) {
-        this.setState({value: event.target.value});
+        this.setState({ value: event.target.value });
 
         this.props.onChange && this.props.onChange(event);
     }

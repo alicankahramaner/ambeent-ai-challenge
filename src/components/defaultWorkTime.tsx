@@ -3,6 +3,7 @@ import { TimeInput, TimeInputDataDto } from './timeinput';
 import { Card } from './card';
 import { DefaultShiftDto } from '../models';
 import { CheckDataMatches } from '../helpers/util';
+import { Button } from './button';
 
 interface DefaultWorkTimeProps {
     data: DefaultShiftDto;
@@ -12,17 +13,16 @@ interface DefaultWorkTimeProps {
 export const DefaultWorkTime: React.FC<DefaultWorkTimeProps> = (props) => {
     const [state, setState] = React.useState<DefaultShiftDto>(props.data)
 
-    React.useEffect(() => {
-        setState(props.data);
-    }, [props.data])
-
     const onChange = (data: TimeInputDataDto) => {
-
         setState({
             startHour: Number(data.hour),
             startMinute: Number(data.min)
         });
     }
+
+    React.useEffect(() => {
+        setState(props.data);
+    }, [props.data])
 
     const isChanged = () => {
         return CheckDataMatches(props.data, state);
@@ -43,11 +43,11 @@ export const DefaultWorkTime: React.FC<DefaultWorkTimeProps> = (props) => {
                 data={{ min: state.startMinute, hour: state.startHour }}
                 onChange={(data) => onChange(data)}
             />
-            <button
-                className="pull-right"
+            <Button
+                text="Kaydet"
                 onClick={() => onSave()}
                 disabled={isChanged()}
-            >Kaydet</button>
+            />
         </Card>
     )
 }

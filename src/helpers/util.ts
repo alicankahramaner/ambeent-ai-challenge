@@ -1,3 +1,4 @@
+import { isEqual } from 'lodash';
 /**
  * 
  * @param length return string lenght (max 15)
@@ -11,6 +12,6 @@ export const RandomStringGenerator = (length: number = 5) => {
  * @param dataOne First object
  * @param dataTwo Second object
  */
-export const CheckDataMatches = (dataOne: any, dataTwo: any) => {
-    return JSON.stringify(dataOne) === JSON.stringify(dataTwo);
+export const CheckDataMatches = (dataOne: any, dataTwo: any): boolean => {
+    return isEqual(dataOne, dataTwo);
 }
