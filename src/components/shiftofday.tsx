@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ShiftOfDayDto } from '../models';
 import { Card } from './card';
-import { CheckMergeData } from '../helpers/util';
+import { CheckDataMatches } from '../helpers/util';
 import { TimeInput } from './timeinput';
 import { Checkbox } from './checkbox';
 import { FormItem } from './formItem';
@@ -16,7 +16,7 @@ export const ShiftOfDay: React.FC<ShiftOfDayProps> = (props) => {
     const [state, setState] = React.useState<ShiftOfDayDto>(props.data);
 
     const isChanged = () => {
-        return CheckMergeData(props.data, state);
+        return CheckDataMatches(props.data, state);
     };
 
     const onSave = () => {

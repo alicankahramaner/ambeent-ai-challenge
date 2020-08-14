@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Input } from './input';
-import { RandomStringGenerator, CheckMergeData } from '../helpers/util';
+import { RandomStringGenerator, CheckDataMatches } from '../helpers/util';
 import { TimeDto } from '../models';
 
 interface TimeInputProps {
@@ -35,7 +35,7 @@ export class TimeInput extends React.Component<TimeInputProps, TimeInputState> {
     }
 
     componentDidUpdate(prevProps: TimeInputProps) {
-        if (!CheckMergeData(prevProps.data, this.props.data)) {
+        if (!CheckDataMatches(prevProps.data, this.props.data)) {
             let { hour, min } = this.props.data;
             this.setState({
                 hour: String(hour),

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { TimeInput } from './timeinput';
 import { Card } from './card';
 import { DefaultShiftDto, TimeDto } from '../models';
-import { CheckMergeData } from '../helpers/util';
+import { CheckDataMatches } from '../helpers/util';
 
 interface DefaultWorkTimeProps {
     data: DefaultShiftDto;
@@ -25,7 +25,7 @@ export const DefaultWorkTime: React.FC<DefaultWorkTimeProps> = (props) => {
     }
 
     const isChanged = () => {
-        return CheckMergeData(props.data, state);
+        return CheckDataMatches(props.data, state);
     };
 
     const onSave = () => {
