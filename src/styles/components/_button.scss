@@ -1,0 +1,13 @@
+button {
+    border: none;
+    background: none;
+    color: $blue;
+    font-size: 14px;
+    display: inline-flex;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:disabled{
+        color:$gray-500;
+    }
+}

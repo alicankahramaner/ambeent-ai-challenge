@@ -3,28 +3,30 @@
     border-radius: $radiusSize;
     border: 1px solid $gray-500;
     box-shadow: 0px 5px 10px $gray-400;
-    margin-bottom:15px;
+    margin-bottom: 15px;
+    background-color: $white;
 
-    &_title{
+    &_title {
         display: flex;
         flex-direction: column;
         margin-top: -10px;
         margin-bottom: 15px;
 
-        h2{
-            margin-top:0;
-            margin-bottom:10px;
-            color:$gray-800;
+        h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: $gray-800;
         }
 
-        span{
-            color:$gray-600;
+        span {
+            color: $gray-600;
         }
     }
 
-    &.reverseTitle{
-        .card_title{
+    &.reverseTitle {
+        .card_title {
             flex-direction: column-reverse;
         }
     }
+
 }

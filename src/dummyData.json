@@ -1,0 +1,57 @@
+{
+    "default": {
+        "startHour": 9,
+        "startMinute": 30
+    },
+    "shift": [
+        {
+            "isHoliday": false,
+            "startHour": 8,
+            "startMinute": 30,
+            "finishHour": 14,
+            "finishMinute": 30
+        },
+        {
+            "isHoliday": false,
+            "startHour": 8,
+            "startMinute": 30,
+            "finishHour": 14,
+            "finishMinute": 30
+        },
+        {
+            "isHoliday": false,
+            "startHour": 8,
+            "startMinute": 30,
+            "finishHour": 14,
+            "finishMinute": 30
+        },
+        {
+            "isHoliday": false,
+            "startHour": 8,
+            "startMinute": 30,
+            "finishHour": 14,
+            "finishMinute": 30
+        },
+        {
+            "isHoliday": false,
+            "startHour": 8,
+            "startMinute": 30,
+            "finishHour": 14,
+            "finishMinute": 30
+        },
+        {
+            "isHoliday": false,
+            "startHour": 8,
+            "startMinute": 30,
+            "finishHour": 14,
+            "finishMinute": 30
+        },
+        {
+            "isHoliday": true,
+            "startHour": 8,
+            "startMinute": 30,
+            "finishHour": 14,
+            "finishMinute": 30
+        }
+    ]
+}

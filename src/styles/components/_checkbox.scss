@@ -1,22 +1,23 @@
 .material-checkbox {
-    display: inline-flex;
-    justify-content: center;
+    display: flex;
     font-size: 13px;
-    // padding: 5px;
     height: $inputHeight;
     align-items: center;
-    padding:0px 5px;
+    padding: 0px 5px;
     &-input {
         position: relative;
         margin-right: 10px;
         width: 35px;
-        display: inline-flex;
         cursor: pointer;
+        display: inline-flex;
 
         input {
             display: inline-flex;
             align-items: center;
             appearance: none;
+            z-index: 1;
+            cursor: inherit;
+            width: 35px;
             &:before,
             &:after {
                 content: "";
@@ -51,5 +52,8 @@
                 }
             }
         }
+    }
+    label {
+        cursor: pointer;
     }
 }
