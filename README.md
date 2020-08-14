@@ -10,6 +10,10 @@
 6. Eğer kart değişiklik yapıp kaydedildiyse, kaydet butonu tekrar `disabled` olacaktır.
 8. `design.png` de görülen tasarım Material UI kullanılarak yapılmıştır, fakat challenge içerisinde tasarım için zorunluluğu yoktur. Tasarıma bu tasarımda bir çalışmanın yapılması beklenilmektedir.
 
+## Notlar
+* Tasarım için herhangi bir UI framework kullanılmadı, sadece grid yapısı için bootstrap'in scss dosyalarından grid için gerekli olan SCSS dosyaları import edildi.
+* Component'lar tamamen tasarıma uygun şekilde oluşturuldu.
+* Base component'ların yanı sıra challenge için gerekli olan component'lar da oluşturuldu ve tasarımları sıfırdan tasarıma uygun şekilde kodlandı.
 
 ### Dummy Data
 
