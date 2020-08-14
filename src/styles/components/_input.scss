@@ -28,6 +28,7 @@
         font-size: 14px;
         padding: 0;
         border-bottom: 1px solid $gray-500;
+        transition: all ease-in-out .3s;
 
         &[type="number"] {
             &::-webkit-inner-spin-button,
@@ -46,6 +47,10 @@
                 text-indent: 0;
                 color: $blue;
             }
+        }
+
+        &:focus {
+            background-color: $gray-200;
         }
     }
 }

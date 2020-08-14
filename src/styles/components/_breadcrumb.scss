@@ -1,0 +1,22 @@
+.breadcrumb {
+    padding: 15px 0px;
+    padding-left: 15px;
+    a{
+        text-decoration: none;
+        color:$gray-500;
+        font-size: 13px;
+        display: inline-block;
+        &:not(:first-child){
+            color:$gray-700;
+        }
+
+        &:not(:last-child){
+            &:after{
+                content:'/';
+                display: block;
+                float:right;
+                padding:0px 7px;
+            }
+        }
+    }
+}

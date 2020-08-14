@@ -64,6 +64,14 @@ export class App extends React.Component<any, ShiftDto> {
       <Container>
         <Row>
           <Col>
+            <nav className="breadcrumb">
+              <a href="#settings">Ayarlar</a>
+              <a href="#worktimes">Çalışma Saatleri</a>
+            </nav>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
             <Card>
               <Alert
                 message="Yetkili servis çalışma saatlerini buradan ayarlayabilirsiniz."
@@ -82,6 +90,7 @@ export class App extends React.Component<any, ShiftDto> {
         <Row>
           {
             this.state.shift.map((shift: ShiftOfDayDto, index: number) => {
+              let day = this.days[index];
               return (
                 <Col key={`col_${index}`} breakpoints={
                   {
@@ -92,7 +101,8 @@ export class App extends React.Component<any, ShiftDto> {
                   <ShiftOfDay
                     data={shift}
                     key={`shift_${index}`}
-                    dayName={this.days[index]}
+                    dayName={day}
+                    className={day === 'Cumartesi' ? 'saturday' : day === 'Pazar' ? 'sunday' : undefined}
                     onSave={(e) => this.saveShiftData(e, index)}
                   />
                 </Col>

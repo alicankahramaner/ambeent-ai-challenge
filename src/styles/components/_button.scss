@@ -6,6 +6,7 @@ button {
     display: inline-flex;
     cursor: pointer;
     text-transform: uppercase;
+    transition: all ease-in-out .3s;
 
     &:disabled{
         color:$gray-500;

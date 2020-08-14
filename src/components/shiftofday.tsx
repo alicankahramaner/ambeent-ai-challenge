@@ -8,6 +8,7 @@ import { FormItem } from './formItem';
 
 interface ShiftOfDayProps {
     dayName: string;
+    className?: string;
     data: ShiftOfDayDto;
     onSave(data: ShiftOfDayDto): void;
 }
@@ -23,12 +24,20 @@ export const ShiftOfDay: React.FC<ShiftOfDayProps> = (props) => {
         props.onSave(state);
     }
 
+    const className = () => {
+        let classList: string[] = ['shiftofday'];
+
+        props.className && classList.push(props.className);
+
+        return classList.join(' ');
+    }
+
     return (
         <Card
             subTitle="Gün"
             reversSortTitle={true}
             title={props.dayName}
-            className="shiftofday"
+            className={className()}
         >
             <FormItem>
                 <Checkbox checked={state.isHoliday} onChange={() => setState({ ...state, isHoliday: !state.isHoliday })} label="Tatil" />
