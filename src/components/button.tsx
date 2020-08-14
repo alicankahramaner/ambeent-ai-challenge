@@ -7,7 +7,6 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button: React.FC<ButtonProps> = (props) => {
 
     const isDisabled = () => {
-        console.log('btn', props.disabled);
         return props.disabled && props.disabled === true ? true : undefined;
     }
 
