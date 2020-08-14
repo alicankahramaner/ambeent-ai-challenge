@@ -17,6 +17,7 @@
             appearance: none;
             z-index: 1;
             cursor: inherit;
+            border: none; // for mobile device
             width: 35px;
             &:before,
             &:after {

@@ -95,7 +95,7 @@ export class TimeInput extends React.Component<TimeInputProps, TimeInputState> {
                         value={this.parseStringTimeFormat(this.state.hour)}
                         max={24}
                         min={0}
-                        type="text"
+                        type="number"
                         onChange={(e) => this.onChangeHour(e)}
                     />
 
@@ -104,7 +104,7 @@ export class TimeInput extends React.Component<TimeInputProps, TimeInputState> {
                         value={this.parseStringTimeFormat(this.state.min)}
                         max={60}
                         min={0}
-                        type="text"
+                        type="number"
                         onChange={(e) => this.onChangeMin(e)}
                     />
                 </div>
