@@ -1,6 +1,6 @@
 {
     "default": {
-        "startHour": 9,
+        "startHour": 10,
         "startMinute": 30
     },
     "shift": [
